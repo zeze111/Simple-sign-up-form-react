@@ -21,12 +21,12 @@ export const validateUser = (user, oldUsers,  response) => {
     } if (oldUsers.length >= 1) {
         const email = oldUsers.map((oldUser) => {
           if (user.email === oldUser.email) {
-            return response.status(409).json({
-                status: 'Unsuccessful',
-                message: 'Email already exist',
-              });
+            return oldUser.email;
           }
         });
+        if (email.length) {
+            return 'email exists';
+        }
     } if(errors.length === 0) {
       return true
     }

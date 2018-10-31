@@ -48,10 +48,10 @@ class SignupForm extends Component {
     const user = { firstName, surname, email, password };
     const validate = validateUser(user);
 
-    if (validate === true) {
+    if (validate) {
       this.props.signup(user)
       .then(() => {
-        if (!this.state.error) {
+        if (!this.state.error && this.props.error) {
           this.setState({ error: this.props.error});
         } else {
           alert(this.props.message);

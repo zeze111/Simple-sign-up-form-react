@@ -1,6 +1,10 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
+import app from './index';
+
+chai.use(chaiHttp);
+
 const should = chai.should();
 const createUser1 = {
   firstName: 'user',

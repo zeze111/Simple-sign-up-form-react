@@ -4,21 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./server --compilers js:babel-register",
-    "start:server": "nodemon --exec babel-node -- ./server/index.js"
+    "test": "NODE_ENV=test mocha ./server/signup.test.js --compilers js:@babel/register --exit",
+    "start:server": "NODE_ENV=development nodemon --exec babel-node -- ./server/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-2": "^7.0.0",
-    "axios": "^0.18.0",
+    "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.4",
-    "babel-register": "^6.26.0",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
@@ -53,6 +52,8 @@
     "webpack-hot-middleware": "^2.24.3"
   },
   "devDependencies": {
-    "@babel/node": "^7.0.0"
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0"
   }
 }

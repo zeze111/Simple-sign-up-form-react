@@ -13,12 +13,16 @@ const compiler = webpack(webpackConfig);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({}));
+
+if (process.env.NODE_ENV === 'development') {
 app.use(webpackMiddleware(compiler, {
   hot: true,
   publicPath: webpackConfig.output.publicPath,
   noInfo: true,
 }));
 app.use(webpackHotMiddleware(compiler));
+  }
+
 app.use(express.static(path.join(__dirname, '../client/style.scss')));
 
 

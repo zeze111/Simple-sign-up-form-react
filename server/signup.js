@@ -21,6 +21,11 @@ class Authenticate {
         message: `Welcome ${User.firstName}`,
         User
       });
+    } else if (validate === 'email exists') {
+      return response.status(409).json({
+        status: 'Unsuccessful',
+        message: 'Email already exist',
+      });
     } else {
       return validate;
     }
