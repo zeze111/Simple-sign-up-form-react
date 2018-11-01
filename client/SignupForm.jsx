@@ -47,7 +47,6 @@ class SignupForm extends Component {
     const { firstName, surname, email, password } = this.state;
     const user = { firstName, surname, email, password };
     const validate = validateUser(user);
-    console.log(validate);
 
     if (validate === true) {
       this.props.signup(user)
