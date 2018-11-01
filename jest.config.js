@@ -4,7 +4,7 @@ module.exports = {
     '/node_modules/',
     '/server/',
     '/client/Index.jsx',
-    '/client/testSetup.js'
+    '/client/tests/testSetup.js'
   ],
   collectCoverage: true,
   collectCoverageFrom: [
@@ -15,7 +15,7 @@ module.exports = {
   rootDir: 'client',
   roots: ['<rootDir>'],
   setupFiles: [
-    '<rootDir>/testSetup.js'
+    '<rootDir>/tests/testSetup.js'
   ],
   moduleFileExtensions: [
     'js',

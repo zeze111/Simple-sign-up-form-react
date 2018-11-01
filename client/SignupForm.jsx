@@ -95,7 +95,7 @@ class SignupForm extends Component {
                 value={this.state.surname}
                 onChange={this.onChange}
                 type="text"
-                id="surname"
+                id="sname"
                 name="surname">
               </input>
             </p>

@@ -7,7 +7,7 @@ export default (state = initialState, action) => {
     case SIGNUP_SUCCESS:
       return {
         ...state,
-        currentUser: action.payload.User,
+        currentUser: action.payload.user,
         message: action.payload.message
       };
     case SIGNUP_FAILED:
