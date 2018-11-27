@@ -4,6 +4,10 @@ sudo: false
 node_js:
   - node
 
+before_script:
+  - npm install -g node-sass
+  - npm install
+
 env:
   global:
     - export NODE_ENV=test
