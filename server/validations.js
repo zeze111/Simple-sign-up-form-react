@@ -24,7 +24,7 @@ export const validateUser = (user, oldUsers,  response) => {
             return oldUser.email;
           }
         });
-        if (email.length) {
+        if (!email.includes(undefined)) {
             return 'email exists';
         }
     } if(errors.length === 0) {

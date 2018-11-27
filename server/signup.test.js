@@ -2,6 +2,7 @@ import chai from 'chai';
 import chaiHttp from 'chai-http';
 
 import app from './index';
+import { Users } from './dummy-database';
 
 chai.use(chaiHttp);
 
@@ -21,6 +22,10 @@ const createUser2 = {
 };
 
 describe('Sign up User', () => {
+  before(function() {
+    Users.length = 0;
+  });
+
   it('it should sign up user successfuly', (done) => {
     chai.request(app)
       .post('/api/v1/signup')
