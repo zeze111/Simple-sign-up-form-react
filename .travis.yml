@@ -2,10 +2,10 @@ language: node_js
 sudo: false
 
 node_js:
-  - "8.11.1"
+  - "9.4.0"
 
 before_install:
-  - npm install -g npm@4
+  - npm install -g npm@5
 
 install:
   - npm rebuild node-sass
